@@ -72,7 +72,7 @@ const sendVerificationEmail = ({_id, Email}, res) => {
                 status: 0,
                 message: "Error while saving the Verification"
             })
-        })
+        }) 
     }).catch(err => {
         res.json({
             status: 0,
