@@ -20,6 +20,7 @@ const signUp = require('./API/User/SignUp');
 const HomeData = require('./API/getHomeData/homeData');
 const addEvent = require('./API/addEvent/addEvent');
 const signIn = require('./API/User/SignIn');
+const { whoami } = require('./middleware/whoami');
 
 
 //connecting API's
@@ -27,6 +28,7 @@ app.use('/event', addEvent);
 app.use('/home', HomeData);
 app.use('/user',signUp);
 app.use('/users',signIn);
+app.post('/user/verify', whoami);
 app.use('/', (req, res)=>{
     res.sendFile(path.join(__dirname+"/views/homepage.html"));
 })
