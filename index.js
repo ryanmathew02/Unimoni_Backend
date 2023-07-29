@@ -12,7 +12,7 @@ const cors = require('cors')
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded( {extended: true} ));
 app.use(cors({
-    origin: "http://localhost:3000"
+    origin: ["http://localhost:3000","https://unimoni-front-end.vercel.app"]
 }));
 
 //API's
