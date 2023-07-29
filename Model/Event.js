@@ -3,16 +3,34 @@ const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 
 const EventsSchema = new schema({
-    Name: String,
-    Location: String,
+    Name: {
+        type: String,
+        required: true
+    },
+    Location: {
+        type: String,
+        required: true
+    },
     Artist: [{
         name: String,
         img: String,
     }],
-    date: Date,
-    startTime: Date,
-    endTime: Date,
-    available: Number,
+    date: {
+        type: Date,
+        required: true
+    },
+    startTime: {
+        type: Date,
+        required: true
+    },
+    endTime: {
+        type: Date,
+        required: true
+    },
+    available: {
+        type: Number,
+        required: true
+    },
     active: Boolean,
 })
 

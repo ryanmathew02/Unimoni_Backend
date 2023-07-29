@@ -4,6 +4,7 @@ const router = express.Router();
 
 
 router.post('/new', (req,res) => {
+    console.log(req.email);
     const ename = req.body.ename;
     const location = req.body.eloct;
     const artist = req.body.eartist;
