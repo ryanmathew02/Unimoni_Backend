@@ -30,9 +30,12 @@ app.use('/home', HomeData);
 app.use('/user',signUp);
 app.use('/users',signIn);
 app.post('/user/verify', whoami);
-app.use('/', (req, res)=>{
-    res.sendFile(path.join(__dirname+"/views/homepage.html"));
+app.get('/', (req,res)=>{
+    res.json("Working");
 })
+// app.use('/', (req, res)=>{
+//     res.sendFile(path.join(__dirname+"/views/homepage.html"));
+// })
 
 app.use(error)
 app.listen(PORT, () => {
