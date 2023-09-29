@@ -7,6 +7,7 @@ const { catchAsyncError } = require('./createAsyncError');
 module.exports.whoami = catchAsyncError(async (req, res, next) => {
     const { token } = req.body;
     console.log(token);
+    console.log("Check whoami");
     if (!token) {
         // return next(new ErrorHandler("Token not found", 400));
         res.json({

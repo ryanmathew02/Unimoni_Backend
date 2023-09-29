@@ -118,7 +118,8 @@ route.post('/signUp', async (req, res) => {
                         Email: email,
                         Password: hashPassword,
                         PhoneNo: phone,
-                        verified: false
+                        verified: false,
+                        googleSign: false
                     })
 
                     newUser.save().then(result => {

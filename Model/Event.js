@@ -32,6 +32,7 @@ const EventsSchema = new schema({
         required: true
     },
     active: Boolean,
+    organizer: String,
 })
 
 const Event = mongoose.model('events', EventsSchema);

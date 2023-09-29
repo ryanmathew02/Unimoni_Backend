@@ -4,7 +4,8 @@ const ErrorHandler = require('./errorhandler');
 
 module.exports =  catchAsyncError( async (req, res, next) => {
 
-    const beare = req.headers.authorization
+    console.log("Check isAuth working");
+    const beare = req.headers.authorization;
     if(!beare){
         return next(new ErrorHandler("Beare header not valid", 402));
     }

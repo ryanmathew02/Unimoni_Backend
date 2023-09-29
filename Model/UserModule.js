@@ -7,7 +7,10 @@ const UserModule = new schema({
     Email: String,
     Password: String,
     PhoneNo: String,
-    verified: Boolean
+    org: String,
+    address: String,
+    verified: Boolean,
+    googleSign: Boolean,
 })
 
 const users = mongoose.model('user',  UserModule);

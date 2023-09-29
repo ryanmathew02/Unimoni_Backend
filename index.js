@@ -22,14 +22,17 @@ const addEvent = require('./API/addEvent/addEvent');
 const signIn = require('./API/User/SignIn');
 const { whoami } = require('./middleware/whoami');
 const isAuth = require('./middleware/isAuth');
-
+const googleSign = require('./API/User/googleSign');
+const { getDetails } = require('./API/User/getDeatils');
 
 //connecting API's
 app.use('/event',isAuth, addEvent);
 app.use('/home', HomeData);
 app.use('/user',signUp);
 app.use('/users',signIn);
+app.use('/google', googleSign);
 app.post('/user/verify', whoami);
+app.get('/user/getdetails', isAuth, getDetails);
 app.get('/', (req,res)=>{
     res.json("Working");
 })
